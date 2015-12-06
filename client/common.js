@@ -10,3 +10,9 @@ Meteor.startup(function () {
   });
 
 });
+
+// global function to display user avatar in templates
+Template.registerHelper('getProfileImage', function(userId){
+	var imgUrl = UserImages.findOne({userId: userId}).image;
+	return imgUrl;
+});

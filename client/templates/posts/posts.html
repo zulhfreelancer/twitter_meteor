@@ -26,36 +26,19 @@
 
 	<hr>
 
-	<div class="row post">
-		<div class="col-md-1">
-			<img src="images/profile.svg">
-		</div>
+	{{#each posts}}
+		<div class="row post">
+			<div class="col-md-1">
+				<img src="{{getProfileImage userId}}">
+			</div>
 
-		<div class="col-md-11">
-			<small>Posted By Ahmad Albab at 31 Dec 2015</small>
-			<p>This is the tweet</p>
+			<div class="col-md-11">
+				<small>Posted By {{username}} at {{createdAt}}</small>
+				<p>{{body}}</p>
+			</div>
 		</div>
-	</div>
+	{{else}}
+		<p>No posts found.</p>
+	{{/each}}
 
-	<div class="row post">
-		<div class="col-md-1">
-			<img src="images/profile.svg">
-		</div>
-
-		<div class="col-md-11">
-			<small>Posted By Ahmad Albab at 31 Dec 2015</small>
-			<p>This is the tweet</p>
-		</div>
-	</div>
-
-	<div class="row post">
-		<div class="col-md-1">
-			<img src="images/profile.svg">
-		</div>
-
-		<div class="col-md-11">
-			<small>Posted By Ahmad Albab at 31 Dec 2015</small>
-			<p>This is the tweet</p>
-		</div>
-	</div>
 </template>
