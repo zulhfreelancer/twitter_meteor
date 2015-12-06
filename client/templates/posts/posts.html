@@ -1,8 +1,8 @@
 <template name="posts">
 	{{#if currentUser}}
 		<!-- Button trigger modal -->
-		<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#postModal">
-		  Say Something
+		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#postModal">
+		 Post a tweet
 		</button>
 	{{/if}}
 	<!-- Modal -->
@@ -15,9 +15,11 @@
 	      </div>
 	      <div class="modal-body">
 	        {{#autoForm collection="Posts" id="insertPostForm" type="insert"}}
-	        	{{> afQuickField name="body" rows=4}}
-	        	<button type="submit" class="btn btn-primary">Tweet</button>
-	        	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        	{{> afQuickField name="body" rows=4 label=false}}
+	        	<div class="pull-right">
+	        		<button type="submit" class="btn btn-primary">Tweet</button>
+	        	</div>
+	        	<br><br>
 	        {{/autoForm}}
 	      </div>
 	    </div>
